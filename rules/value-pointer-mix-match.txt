@@ -1,0 +1,7 @@
+If you have a *T you can call methods that have a receiver type of *T as well as methods that have a receiver type of T.
+If you have a T and it is addressable you can call methods that have a receiver type of *T as well as methods that have a receiver type of T.
+If you have a T and it isn’t addressable, you can only call methods that have a receiver type of T, not *T.
+If you have an interface I, and some or all of the methods in I’s method set are provided by methods with a receiver of *T (with the remainder being provided by methods with a receiver of T), then *T satisfies the interface I, but T doesn’t. That is because *T’s method set includes T’s, but not the other way around (see the first bullet).
+In short, you can mix and match methods with Value Receivers and Methods with Pointer Receivers, and use them with variables containing values and pointers, without worrying about which is which. Both will work, and the syntax is the same. However, if Methods with Pointer Receivers are needed to satisfy an Interface, then only a Pointer will be assignable to the Interface — a Value won’t be valid.
+
+
