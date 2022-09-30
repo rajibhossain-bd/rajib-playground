@@ -1,3 +1,4 @@
+//here a and b, these two variables, are acting like static variables.
 package main
 
 import "fmt"
